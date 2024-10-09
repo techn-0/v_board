@@ -36,9 +36,18 @@ export const deletePost = (id) => async (dispatch) => {
 
     dispatch({ type: "DELETE", payload: id });
 
-    // 게시물 목록을 다시 불러오기
+    // 게시물 목록을 다시 불러오기 수정
     dispatch(getPosts());
-    
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const likePost = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.likePost(id);
+
+    dispatch({ type: "UPDATE", payload: data });
   } catch (error) {
     console.log(error);
   }

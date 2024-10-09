@@ -82,7 +82,7 @@ const Form = ({ currentId, setCurrentId }) => {
           fullWidth
           value={postData.tags}
           onChange={(e) =>
-            setPostData({ ...postData, tags: e.target.value.split(",") })
+            setPostData({ ...postData, tags: e.target.value.split(",") }) // 수정 스플릿
           }
         />
         <div className={classes.fileInput}>
