@@ -7,6 +7,7 @@ import { thunk } from "redux-thunk";
 import reducers from "./reducers";
 
 import App from "./App";
+import "./index.css"
 
 
 import { ThemeProvider, createTheme } from "@mui/material/styles"; // ThemeProvider와 createTheme 가져오기

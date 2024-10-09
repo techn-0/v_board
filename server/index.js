@@ -5,12 +5,16 @@ import cors from "cors";
 
 import postRoutes from "./routes/posts.js";
 
+
 const app = express();
 
 // Body Parser 미들웨어 설정 (용량 제한을 "30mb"로 수정)
-app.use(bodyParser.json({ limit: "100bm", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "100bm", extended: true }));
+// app.use(bodyParser.json({ limit: "50bm", extended: true }));
+// app.use(bodyParser.urlencoded({ limit: "50bm", extended: true }));
+app.use(express.json({ limit: '50mb' }));  // JSON 데이터 크기 제한을 50MB로 설정
+app.use(express.urlencoded({ limit: '50mb', extended: true }));  // URL-encoded 데이터 크기 제한
 app.use(cors());
+
 
 app.use("/posts", postRoutes);
 // MongoDB 연결 URL
