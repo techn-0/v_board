@@ -35,6 +35,10 @@ export const deletePost = (id) => async (dispatch) => {
     await api.deletePost(id);
 
     dispatch({ type: "DELETE", payload: id });
+
+    // 게시물 목록을 다시 불러오기
+    dispatch(getPosts());
+    
   } catch (error) {
     console.log(error);
   }
