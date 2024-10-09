@@ -7,10 +7,9 @@ import postRoutes from "./routes/posts.js";
 
 const app = express();
 
-
 // Body Parser 미들웨어 설정 (용량 제한을 "30mb"로 수정)
-app.use(bodyParser.json({ limit: "30bm", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30bm", extended: true }));
+app.use(bodyParser.json({ limit: "100bm", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "100bm", extended: true }));
 app.use(cors());
 
 app.use("/posts", postRoutes);
